@@ -102,7 +102,7 @@ and addresses are translated correctly.
  * In a separate terminal window, build and launch the controller:
 
   ~~~ shell
-  $ make Nat1.d.byte
+  $ make Nat1.d.byte 
   $ ./Nat1.d.byte
   ~~~
 
@@ -122,15 +122,16 @@ and addresses are translated correctly.
   # arp -v -s [public IP address] [public MAC address]
   # while true; do fortune | nc -l 80; done
   ~~~
-The first command adds a static entry into the arp table that binds your public MAC
-address to your public IP address.
+  
+ The first command adds a static entry into the arp table that binds your public MAC
+ address to your public IP address.
 
 * In the terminal for `h1`, fetch a fortune from `h3`.
 
   ~~~
   # curl 10.0.0.3:80
    ~~~
-You should’ve received a fortune. Now try to fetch a fortune on the `h2` terminal.
+ You should’ve received a fortune. Now try to fetch a fortune on the `h2` terminal.
 
 * In the terminal for the controller, check to see that your IP addresses are translating
 correctly.
@@ -153,7 +154,7 @@ correctly.
    }
   Found a mapping in the hashtable!
   ~~~
-Notice how this packet matches the outgoing flow packet above.
+ Notice how this packet matches the outgoing flow packet above.
 
 ### PAT - The Port Address Translating Function
 
